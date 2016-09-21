@@ -4,7 +4,7 @@
 Plugin Name: RS Panel
 Author: Redstone
 Author uri: https://redstone.media
-Version: 1.0
+Version: 1.1
 */
 
 
