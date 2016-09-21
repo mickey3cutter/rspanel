@@ -1,0 +1,6 @@
+.tablenav .tablenav-pages a:focus, .tablenav .tablenav-pages a:hover,#adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head, #adminmenu .wp-menu-arrow, #adminmenu .wp-menu-arrow div, #adminmenu li.current a.menu-top, #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu, .folded #adminmenu li.current.menu-top, .folded #adminmenu li.wp-has-current-submenu{background: #aa1900 !important;}
+#adminmenu .wp-submenu a:focus, #adminmenu .wp-submenu a:hover, #adminmenu a:hover, #adminmenu li.menu-top>a:focus,#adminmenu li:hover div.wp-menu-image:before,#collapse-menu:hover, #collapse-menu:hover #collapse-button div:after, #adminmenu li.menu-top:hover, #adminmenu li.opensub>a.menu-top, #adminmenu li>a.menu-top:focus, #adminmenu li a:focus div.wp-menu-image:before, #adminmenu li.opensub div.wp-menu-image:before, #adminmenu li:hover div.wp-menu-image:before{	color: #fff !important;}
+body.login h1 a{background-image: url(../img/redstone.png) no-repeat !important;}
+.folded .wp-first-item.menu-top-first{background: url(../img/redstone.png) 10px 50% no-repeat;}
+#adminmenu{background: url(../img/redstone.png) 10px 12px no-repeat;background-size: 105px;}
+#adminmenu{padding-top: 50px;}
