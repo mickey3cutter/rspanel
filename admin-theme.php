@@ -23,7 +23,7 @@ function github_plugin_updater_test_init() {
 
 		$config = array(
 			'slug' => plugin_basename( __FILE__ ),
-			'proper_folder_name' => 'gilpanel',
+			'proper_folder_name' => 'rspanel',
 			'api_url' => 'https://api.github.com/repos/mickey3cutter/rspanel',
 			'raw_url' => 'https://raw.github.com/mickey3cutter/rspanel/master',
 			'github_url' => 'https://github.com/mickey3cutter/rspanel',
