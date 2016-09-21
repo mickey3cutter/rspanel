@@ -117,6 +117,22 @@ if(isset($option['gil'])){
 
 	
 }
+if( $option['admin_css']) { 
+	function m3c_admin_css() {
+		$option = get_option( 'm3c_option' ); 
+		echo '<style>'.$option["admin_css"].'</style>'; 
+	}
+	add_action('admin_head' , 'm3c_admin_css' );
+	
+}
+
+function m3c_admin_head_func(){
+	echo '<style>
+	#advanced-custom-fields-pro,#toplevel_page_edit-post_type-acf-field-group{display:none}
+	</style>';
+}
+add_action('admin_head','m3c_admin_head_func');
+
 
 //Add script to admin panel
 if(isset($option['js'])){
@@ -155,12 +171,7 @@ if(isset($option['footer_admin'])){
 	}
 	add_filter('admin_footer_text', 'm3c_remove_footer_admin');
 }
-function m3c_admin_head_func(){
-	echo '<style>
-	#advanced-custom-fields-pro,#toplevel_page_edit-post_type-acf-field-group{display:none}
-	</style>';
-}
-add_action('admin_head','m3c_admin_head_func');
+
 
 //Remove admin bar on front-end
 if(isset($option['admin_bar'])){
