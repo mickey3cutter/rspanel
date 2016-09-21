@@ -65,7 +65,7 @@
 		});
 	</script>
 
-<?php if( isset($option['admin_css'])) { echo '<style>'.$option["admin_css"].'</style>'; } ?>
+
 <!-- Add ajax save btn -->
 <!--  <script type="text/javascript">
 jQuery(document).ready(function($) {
