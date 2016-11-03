@@ -4,7 +4,7 @@
 Plugin Name: RS Panel
 Author: Redstone
 Author uri: https://redstone.media
-Version: 1.0
+Version: 1.1
 */
 
 
@@ -70,6 +70,7 @@ if($req_uri == '/wp-admin/rspanel' || $req_uri == 'wp-admin/rspanel/'){
 //Remove menus
 function m3c_remove_menus(){
 	global $option;
+	$option = get_option( 'm3c_option' );
 	$pages_old = $GLOBALS[ 'admin_page_hooks' ];
 	$pages_new = get_option('m3c_menu_positions', true);
 	$pages = explode(',', $pages_new);
