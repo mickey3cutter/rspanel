@@ -24,7 +24,7 @@
 
 			foreach ($pages as $page) {  ?>
 				<label class="m3c_<?php echo strtolower($page); ?>"><input id="m3c_option[<?php echo $page; ?>]" data-href="<?php echo $page; ?>" name="m3c_option[<?php echo $page; ?>]" type="checkbox" value="1" <?php checked( '1', isset($option[$page] )); ?> /> 
-					<a href="<?php if(substr($page,0,3)!='edi' && substr($page,-3)!='php') { echo 'admin.php?page='.$page; } else { echo $page; } ?>"><?php echo ucfirst($pages_old[$page]); ?> </a></label>
+					<a href="<?php if(substr($page,0,3)!='edi' && substr($page,-3)!='php') { echo 'admin.php?page='.$page; } else { echo $page; } ?>"><?php echo ucfirst(urldecode($pages_old[$page])); ?> </a></label>
 			<?php }?>
 		</div>
 	</fieldset>
