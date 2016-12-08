@@ -4,3 +4,6 @@ body.login h1 a{background-image: url(../img/redstone.png) no-repeat !important;
 .folded .wp-first-item.menu-top-first{background: url(../img/redstone.png) 10px 50% no-repeat;}
 #adminmenu{background: url(../img/redstone.png) 10px 12px no-repeat;background-size: 105px;}
 #adminmenu{padding-top: 50px;}
+.ui-sortable tr:hover {cursor: move;}
+.ui-sortable tr.alternate {background-color: #F9F9F9;	}
+.ui-sortable tr.ui-sortable-helper {background-color: #F9F9F9;border-top: 1px solid #DFDFDF;}

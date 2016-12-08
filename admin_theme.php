@@ -2,12 +2,13 @@
 
 /*
 Plugin Name: RS Panel
-Author: Redstone
+Author: REDSTONE
+Description: REDSTONE customization plugin
 Author uri: https://redstone.media
-Version: 1.1
+Version: 1.2
 */
 
-
+define('RS_DIR', plugin_dir_url( __FILE__ ));
 
 
 //Update
@@ -15,7 +16,7 @@ Version: 1.1
 add_action( 'init', 'github_plugin_updater_test_init' );
 function github_plugin_updater_test_init() {
 
-	include_once 'updater.php';
+	include_once 'inc/updater.php';
 
 	define( 'WP_GITHUB_FORCE_UPDATE', true );
 
@@ -53,7 +54,7 @@ function register_m3c_menu_page() {
 add_action( 'admin_init', 'm3c_settings_init' );
 add_action( 'admin_menu', 'register_m3c_menu_page' );
 function m3c_admin_page(){
-	require 'admin_page.php';
+	require_once 'inc/admin_page.php';
 }
 
 //Globalize options variable
@@ -93,11 +94,11 @@ if(isset($option['gil'])){
 	  set_transient('m3c_color', $currentHash, 60 * 60 * 24 * 14);
 	}
 	function gil_custom_fonts() {
-	  include ('rs_view.php');
+	  include_once ('inc/rs_view.php');
 	}
 	add_action('admin_footer', 'gil_custom_fonts');
 	function gil_login_logo() {
-	   include ('rs_view.php');
+	   include_once ('inc/rs_view.php');
 	}
 	add_action( 'login_enqueue_scripts', 'gil_login_logo' );
 	
@@ -112,7 +113,7 @@ if(isset($option['gil'])){
 
 	add_action( 'admin_enqueue_scripts', 'register_plugin_styles' );
 	function register_plugin_styles() {
-		wp_register_style( 'default_rs_style', plugin_dir_url( __FILE__ ) . 'css/default_rs_style.css'  );
+		wp_register_style( 'default_rs_style', RS_DIR . 'assets/css/default_rs_style.css'  );
 		wp_enqueue_style( 'default_rs_style' );
 	}
 
@@ -138,7 +139,7 @@ add_action('admin_head','m3c_admin_head_func');
 //Add script to admin panel
 if(isset($option['js'])){
 	function m3c_enqueue() {    
-	    wp_enqueue_script( 'm3c_custom_script', plugin_dir_url( __FILE__ ) . 'js/admin.js' );
+	    wp_enqueue_script( 'm3c_custom_script', RS_DIR . 'assets/js/admin.js' );
 	}
 	add_action('admin_enqueue_scripts', 'm3c_enqueue');
 }
@@ -146,11 +147,11 @@ if(isset($option['js'])){
 //Add Dasboard and Login CSS
 if(isset($option['css'])){
 	function m3c_custom_fonts() {
-	  echo '<link rel="stylesheet" href="'. plugin_dir_url( __FILE__ ) .'css/admin_style.css" type="text/css" media="all" />';
+	  echo '<link rel="stylesheet" href="'. RS_DIR .'assets/css/admin_style.css" type="text/css" media="all" />';
 	}
 	add_action('admin_head', 'm3c_custom_fonts');
 	function m3c_login_logo() {
-	    echo '<link rel="stylesheet" href="'. plugin_dir_url( __FILE__ ) .'css/admin_style.css" type="text/css" media="all" />';
+	    echo '<link rel="stylesheet" href="'. RS_DIR .'assets/css/admin_style.css" type="text/css" media="all" />';
 	 }
 	add_action( 'login_enqueue_scripts', 'm3c_login_logo' );
 }
@@ -179,6 +180,10 @@ if(isset($option['admin_bar'])){
 	add_filter('show_admin_bar', '__return_false', 999);
 }
 
+//Remove sortable
+if(isset($option['sortable'])!=1){
+	include_once ('inc/rs_order.php');
+}
 
 
 
@@ -202,7 +207,6 @@ function m3c_update_menu_positions() {
 function m3c_admin_enqueues() {
 	
 	    wp_enqueue_script('jquery-ui-sortable');
-	    wp_enqueue_script('amr_admin', plugins_url('/js/amr-admin.js', __FILE__), array('jquery-ui-sortable'));
 	    wp_enqueue_script('jsdelivr', 'https://cdn.jsdelivr.net/ace/1.2.3/min/ace.js', array('jquery-ui-sortable'));
 	    wp_enqueue_script('jquery');
 	    wp_enqueue_script('thickbox');
@@ -231,3 +235,4 @@ add_filter( 'login_headerurl', 'custom_loginlogo_url' );
 function custom_loginlogo_url($url) {
 	return 'http://redstone.media/';
 }
+

@@ -3,7 +3,7 @@ $color = get_transient('m3c_color');
 $option = get_option( 'm3c_option' ); 
 ?>
 <style>
-@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700&subset=latin,latin-ext);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700&subset=latin,latin-ext,cyrillic,cyrillic-ext);
 /*Login page*/
 
 html body.login{

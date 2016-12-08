@@ -1,12 +1,13 @@
 <?php m3c_admin_enqueues(); ?>
-<script src="http://malsup.github.com/jquery.form.js"></script>
-<link rel='stylesheet' id='imgareaselect-css'  href='<?php echo plugin_dir_url( __FILE__ ) ?>css/plugin_page.css' type='text/css' media='all' />
-<script type='text/javascript' src="<?php echo plugin_dir_url( __FILE__ ) ?>js/plugin_page.js"></script>
+
+<link rel='stylesheet' id='imgareaselect-css'  href='<?php echo RS_DIR; ?>assets/css/plugin_page.css' type='text/css' media='all' />
+<script type='text/javascript' src="<?php echo RS_DIR; ?>assets/js/plugin_page.js"></script>
 
 <div class="content">
 	<form method="post" action="options.php" id="myOptionsForm">
-	<legend class="act">Hide & Sort admin menu </legend>
-	<fieldset class="act">
+	
+	<fieldset>
+		<legend class="act">Hide & Sort admin menu </legend>
 		<div class="form-group" id="gil_list">
 			<?php 
 			
@@ -27,8 +28,9 @@
 			<?php }?>
 		</div>
 	</fieldset>
-	<legend>Add custom view</legend>
+	
 	<fieldset>
+		<legend>Add custom view</legend>
 		<div class="form-group">
 			<label><input id="m3c_option[css]" name="m3c_option[css]" type="checkbox" value="1" <?php checked( '1', isset($option['css'] )); ?> /> <?php echo 'Add custom CSS' ?> </label>
 			<label><input id="m3c_option[js]" name="m3c_option[js]" type="checkbox" value="1" <?php checked( '1', isset($option['js'] )); ?> /> <?php echo 'Add custom JS' ?> </label>
@@ -43,10 +45,12 @@
 	    	</div>
 		</div>
 	</fieldset>
-	<legend>Other</legend>
+	
 	<fieldset>
+		<legend>Other</legend>
 		<div class="form-group">
 			<label><input id="m3c_option[admin_bar]" name="m3c_option[admin_bar]" type="checkbox" value="1" <?php checked( '1', isset($option['admin_bar'] )); ?> /> <?php echo 'Remove admin bar' ?> </label>
+			<label><input id="m3c_option[sortable]" name="m3c_option[sortable]" type="checkbox" value="1" <?php checked( '1', isset($option['sortable'] )); ?> /> <?php echo 'Remove sortable' ?> </label>
 		</div>
 	</fieldset>
 	<p><input name="submit" id="submit" value="Save" type="submit"></p>
