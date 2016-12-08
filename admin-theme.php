@@ -31,7 +31,7 @@ function github_plugin_updater_test_init() {
 			'zip_url' => 'https://github.com/mickey3cutter/rspanel/archive/master.zip',
 			'sslverify' => true,
 			'requires' => '4.0',
-			'tested' => '4.5.2',
+			'tested' => '4.7',
 			'readme' => 'README.md',
 			'access_token' => '',
 		);
