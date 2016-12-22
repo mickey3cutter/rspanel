@@ -11,7 +11,7 @@ html body.login{
 }
 body.login h1 a{
 	<?php if($option['logo']) { ?> background: url(<?php echo $option['logo']; ?>) no-repeat !important; 
-	<?php } else { ?> background: url(<?php echo RS_DIR; ?>/assets/img/redstone.png) no-repeat !important;<?php } ?>
+	<?php } else { ?> background: url(<?php echo RS_DIR; ?>assets/img/redstone.png) no-repeat !important;<?php } ?>
 	width: 100% !important;
 	height: 40px !important;
 }
