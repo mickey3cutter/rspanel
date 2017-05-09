@@ -133,7 +133,7 @@ function m3c_admin_head_func(){
 	#advanced-custom-fields-pro,#toplevel_page_edit-post_type-acf-field-group{display:none}
 	</style>';
 }
-add_action('admin_head','m3c_admin_head_func');
+//add_action('admin_head','m3c_admin_head_func');
 
 
 //Add script to admin panel
