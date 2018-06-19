@@ -1,5 +1,4 @@
 <?php
-
 /*
   Plugin Name: Simple Custom Post Order
   Plugin URI: http://hsameer.com.np/simple-custom-post-order/
@@ -9,21 +8,15 @@
   Author URI: http://hsameer.com.np/
  */
 
-
 define('RS_ORDER_URL', plugins_url('', __FILE__));
- 
-$rs_order = new RS_O_Engine();
 
+$rs_order = new RS_O_Engine();
 class RS_O_Engine {
 
     function __construct() {
         if (!get_option('rs_order_install'))
             $this->rs_order_install();
-
-      
-
         add_action('admin_init', array($this, 'refresh'));
-
         add_action('admin_init', array($this, 'update_options'));
         add_action('admin_init', array($this, 'load_script_css'));
 
@@ -55,8 +48,6 @@ class RS_O_Engine {
     
     function _check_load_script_css() {
         $active = false;
-
-        //$objects = $this->get_rs_order_options_objects();
         $objects = array('page','post');
         $tags = $this->get_rs_order_options_tags();
 
@@ -89,13 +80,11 @@ class RS_O_Engine {
             wp_enqueue_script('jquery');
             wp_enqueue_script('jquery-ui-sortable');
             wp_enqueue_script('rs_orderjs', RS_DIR . '/assets/js/rs_order.js', array('jquery'), null, true);
-            wp_enqueue_style('rs_order', RS_DIR . '/assets/js/rs_order.css', array(), null);
         }
     }
 
     function refresh() {
         global $wpdb;
-       // $objects = $this->get_rs_order_options_objects();
         $objects = array('page','post');
         $tags = $this->get_rs_order_options_tags();
 
@@ -223,7 +212,6 @@ class RS_O_Engine {
 
         update_option('rs_order_options', $input_options);
 
-        //$objects = $this->get_rs_order_options_objects();
         $objects = array('page','post');
         $tags = $this->get_rs_order_options_tags();
 
@@ -441,4 +429,3 @@ class RS_O_Engine {
     }
 
 }
-
